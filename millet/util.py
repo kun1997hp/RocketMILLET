@@ -25,7 +25,8 @@ def get_gpu_device_for_os() -> torch.device:
         if torch.cuda.is_available():
             return torch.device("cuda")
         raise RuntimeError("Cuda GPU device not found on Linux.")
-    raise NotImplementedError("GPU support not configured for platform {:s}".format(sys.platform))
+    torch.device("cpu")
+    # raise NotImplementedError("GPU support not configured for platform {:s}".format(sys.platform))
 
 
 def cross_entropy_criterion(predictions: torch.Tensor, targets: torch.Tensor) -> float:

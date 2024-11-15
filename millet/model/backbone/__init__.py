@@ -5,3 +5,4 @@ SPDX-License-Identifier: Apache-2.0
 from .fcn import FCNFeatureExtractor
 from .inceptiontime import InceptionTimeFeatureExtractor
 from .resnet import ResNetFeatureExtractor
+from .multirocket import MultiRocketFeatureExtractor
