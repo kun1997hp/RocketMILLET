@@ -59,7 +59,7 @@ class MILLETModel:
         )
         # Early stopping setup
         best_net = None
-        best_loss = np.Inf
+        best_loss = np.inf
         # Train over multiple epochs
         for _ in custom_tqdm(range(n_epochs), desc="Training model"):
             self.net.train()

@@ -19,13 +19,15 @@ def get_gpu_device_for_os() -> torch.device:
 
     :return: Torch GPU device.
     """
-    if sys.platform == "darwin":
-        return torch.device("mps")
-    elif sys.platform == "linux":
-        if torch.cuda.is_available():
-            return torch.device("cuda")
-        raise RuntimeError("Cuda GPU device not found on Linux.")
-    torch.device("cpu")
+    # if sys.platform == "darwin":
+    #     return torch.device("mps")
+    # elif sys.platform == "linux":
+    #     if torch.cuda.is_available():
+    #         return torch.device("cuda")
+    #     raise RuntimeError("Cuda GPU device not found on Linux.")
+    torch.device("cuda")
+    print("torch.cuda.is_available()", torch.cuda.is_available())
+    print("torch.cuda.get_device_name(0)", torch.cuda.get_device_name(0))
     # raise NotImplementedError("GPU support not configured for platform {:s}".format(sys.platform))
 
 
